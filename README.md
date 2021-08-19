@@ -1,2 +1,2 @@
 # escrow-smart-contract
-Escrow smart contract built using Truffle and OpenZeppelin
+Escrow smart contract built using Solidity, Truffle and OpenZeppelin
