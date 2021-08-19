@@ -69,7 +69,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -108,7 +109,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -121,7 +123,8 @@
       "name": "deposit",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -5422,9 +5425,17 @@
     "name": "solc",
     "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "1629390279876": {
+      "events": {},
+      "links": {},
+      "address": "0xeAd2Dc93571399ba734E1646932D44c54AC0191E",
+      "transactionHash": "0x240684626669964664cb69a41f1659828ea40f3411f831649f7ad251cf58fd83"
+    }
+  },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-08-19T16:19:20.714Z",
+  "updatedAt": "2021-08-19T16:55:48.414Z",
+  "networkType": "ethereum",
   "devdoc": {
     "details": "Base escrow contract, holds funds designated for a payee until they withdraw them. Intended usage: This contract (and derived escrow contracts) should be a standalone contract, that only interacts with the contract that instantiated it. That way, it is guaranteed that all Ether will be handled according to the `Escrow` rules, and there is no need to check for payable functions or transfers in the inheritance tree. The contract that uses the escrow as its payment method should be its owner, and provide public methods redirecting to the escrow's deposit and withdraw.",
     "kind": "dev",
