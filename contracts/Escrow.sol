@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.5.2;
 
-import '../node_modules/openzeppelin-solidity/contracts/access/Ownable.sol';
+import 'openzeppelin-solidity/contracts/access/Ownable.sol';
 import 'openzeppelin-solidity/contracts/utils/escrow/Escrow.sol';
 import 'openzeppelin-solidity/contracts/utils/math/SafeMath.sol';
 
