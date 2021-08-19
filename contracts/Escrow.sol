@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.5.2;
+pragma solidity ^0.8.0;
 
 import 'openzeppelin-solidity/contracts/access/Ownable.sol';
 import 'openzeppelin-solidity/contracts/utils/escrow/Escrow.sol';
@@ -24,7 +24,7 @@ contract PaymentGateway is Ownable {
 
   // Recieves payments from customers
   function sendPayment() external payable {
-    escrow.deposit{value:msg.value}(wallet);
+    escrow.deposit{value: msg.value}(wallet);
   }
 
   // With funds to wallet
