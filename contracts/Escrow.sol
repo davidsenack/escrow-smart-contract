@@ -1,8 +1,9 @@
-pragma solidity ^0.5.2;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.5.2;
 
-import 'openzeppelin-solidity/contracts/ownership/Ownable.sol';
-import 'openzeppelin-solidity/contracts/payment/escrow/Escrow.sol';
-import 'openzeppelin-solidity/contracts/math/SafeMath.sol';
+import '../node_modules/openzeppelin-solidity/contracts/access/Ownable.sol';
+import 'openzeppelin-solidity/contracts/utils/escrow/Escrow.sol';
+import 'openzeppelin-solidity/contracts/utils/math/SafeMath.sol';
 
 /**
   * @title Escrow Payment Gateway using Solidity, Truffle, and OpenZeppelin
@@ -16,14 +17,14 @@ contract PaymentGateway is Ownable {
 
 
   // @param _wallet recieves funds from the payment gateway
-  constructor(address payable _wallet) public {
+  constructor(address payable _wallet) {
     escrow = new Escrow();
     wallet = _wallet;
   }
 
   // Recieves payments from customers
   function sendPayment() external payable {
-    escrow.deposit.value(msg.value)(wallet);
+    escrow.deposit{value:msg.value}(wallet);
   }
 
   // With funds to wallet
@@ -36,4 +37,3 @@ contract PaymentGateway is Ownable {
     return escrow.depositsOf(wallet);
   }
 }
-
