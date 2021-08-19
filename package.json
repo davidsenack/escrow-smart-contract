@@ -1,0 +1,17 @@
+{
+  "name": "escrow-smart-contract",
+  "version": "1.0.0",
+  "description": "smart contract for escrow applications",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "david senack",
+  "license": "MIT",
+  "dependencies": {
+    "openzeppelin-solidity": "4.3.0"
+  }
+}
